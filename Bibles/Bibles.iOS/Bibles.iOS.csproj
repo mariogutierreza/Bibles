@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{59C6BD53-3B7A-4EC0-BE20-2FF2A4C39650}</ProjectGuid>
+    <ProjectGuid>{15576B76-D23E-41E2-BA73-33DB1C952550}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Bibles.iOS</RootNamespace>
@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Implementations\Localize.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -124,7 +125,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Bibles\Bibles.csproj">
-      <Project>{EDBFAFF8-2110-466D-9DF9-A5C1C689CEEE}</Project>
+      <Project>{BBE73237-726C-4DF3-862E-0B07E86392AF}</Project>
       <Name>Bibles</Name>
     </ProjectReference>
   </ItemGroup>
