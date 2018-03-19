@@ -302,5 +302,45 @@
         {
             get { return Resource.FromCamera; }
         }
+
+        public static string Previous
+        {
+            get { return Resource.FromCamera; }
+        }
+
+        public static string Next
+        {
+            get { return Resource.FromCamera; }
+        }
+
+        public static string Bibles
+        {
+            get { return Resource.Bibles; }
+        }
+
+        public static string Book
+        {
+            get { return Resource.Book; }
+        }
+
+        public static string TurnOnInternet
+        {
+            get { return Resource.TurnOnInternet; }
+        }
+
+        public static string CheckInternet
+        {
+            get { return Resource.CheckInternet; }
+        }
+
+        public static string Ok
+        {
+            get { return Resource.Ok; }
+        }
+
+        public static string Select
+        {
+            get { return Resource.Select; }
+        }
     }
 }

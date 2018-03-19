@@ -11,7 +11,7 @@
         <NavigationPage 
             x:Name="Navigator">
             <x:Arguments>
-                <pages:MainPage/>
+                <pages:BiblesPage/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

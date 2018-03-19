@@ -12,9 +12,13 @@
         <StackLayout
             Padding="5,20,5,5">
             <Image
-                Source="onu"
+                Source="bible"
                 WidthRequest="100">
             </Image>
+            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                <Picker ItemsSource="{Binding BiblesList}" Title="{i18n:Translate Select}" TextColor="White"></Picker>
+                <SearchBar Placeholder="{i18n:Translate Search}" Text="{Binding Search, Mode=TwoWay}" TextColor="White" HeightRequest="40" SearchCommand="{Binding SearchCommand}"></SearchBar>
+            </StackLayout>
             <ListView 
                 BackgroundColor="Navy"
                 ItemsSource="{Binding Menus}"

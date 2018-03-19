@@ -129,6 +129,12 @@
   <data name="Area" xml:space="preserve">
     <value>Area:</value>
   </data>
+  <data name="Bibles" xml:space="preserve">
+    <value>Bibles</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Book</value>
+  </data>
   <data name="Borders" xml:space="preserve">
     <value>Borders</value>
   </data>
@@ -323,5 +329,17 @@
   </data>
   <data name="UserRegisteredMessage" xml:space="preserve">
     <value>The user was create, now you can login with this email and password.</value>
+  </data>
+  <data name="CheckInternet" xml:space="preserve">
+    <value>Check you internet connection.</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="TurnOnInternet" xml:space="preserve">
+    <value>Please turn on your internet settings.</value>
   </data>
 </root>

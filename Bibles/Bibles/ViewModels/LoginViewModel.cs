@@ -60,6 +60,9 @@
 
             this.IsRemembered = true;
             this.IsEnabled = true;
+
+            this.Email = "mariogutierreza@hotmail.com";
+            this.Password = "123456";
         }
         #endregion
 
@@ -148,7 +151,7 @@
                 Settings.TokenType = token.TokenType;
             }
 
-            
+            mainViewModel.Bibles = new BiblesViewModel();
             Application.Current.MainPage = new MasterPage();
 
             this.IsRunning = false;

@@ -97,6 +97,24 @@ namespace Bibles.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bibles.
+        /// </summary>
+        public static string Bibles {
+            get {
+                return ResourceManager.GetString("Bibles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Borders.
         /// </summary>
         public static string Borders {
@@ -138,6 +156,15 @@ namespace Bibles.Resources {
         public static string ChangeImage {
             get {
                 return ResourceManager.GetString("ChangeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check you internet connection..
+        /// </summary>
+        public static string CheckInternet {
+            get {
+                return ResourceManager.GetString("CheckInternet", resourceCulture);
             }
         }
         
@@ -484,6 +511,15 @@ namespace Bibles.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -619,6 +655,15 @@ namespace Bibles.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Something was wrong, please try later..
         /// </summary>
         public static string SomethingWrong {
@@ -669,6 +714,15 @@ namespace Bibles.Resources {
         public static string Translations {
             get {
                 return ResourceManager.GetString("Translations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please turn on your internet settings..
+        /// </summary>
+        public static string TurnOnInternet {
+            get {
+                return ResourceManager.GetString("TurnOnInternet", resourceCulture);
             }
         }
         

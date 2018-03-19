@@ -36,6 +36,12 @@
                 mainViewModel.TokenType = string.Empty;
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
             }
+            if (this.PageName == "BiblesPage")
+            {
+                App.Navigator.PopToRootAsync();
+                App.Master.IsPresented = false;
+                
+            }
         }
         #endregion
     }

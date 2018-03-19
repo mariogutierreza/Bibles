@@ -5,10 +5,26 @@
     using System.Collections.ObjectModel;
     using Models;
     using Helpers;
+    using System.Linq;
+    using System.Windows.Input;
+    using GalaSoft.MvvmLight.Command;
+    using Bibles.Views;
 
-    public class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
         #region Properties
+        public List<string> BiblesList
+        {
+            get;
+            set;
+        }
+
+        private string search;
+        public string Search
+        {
+            get { return this.search; }
+            set { SetValue(ref this.search, value); }
+        }
 
         public string Token { get; set; }
 
@@ -23,6 +39,32 @@
 
         #region ViewModels
         public LoginViewModel Login
+        {
+            get;
+            set;
+        }
+
+        public BiblesViewModel Bibles
+        {
+            get;
+            set;
+        }
+
+        public BibleViewModel Bible
+        {
+            get;
+            set;
+        }
+
+        public BookViewModel Book
+        {
+            get;
+            set;
+        }
+        #endregion
+
+        #region Properties
+        public string SelectedModule
         {
             get;
             set;
@@ -65,24 +107,35 @@
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_settings",
-                PageName = "MyProfilePage",
-                Title = Languages.MyProfile,
+                Icon = "ic_exit_to_app",
+                PageName = "BiblesPage",
+                Title = Languages.Bibles,
             });
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon = "ic_insert_chart",
-                PageName = "StaticsPage",
-                Title = Languages.Statics,
-            });
-
             this.Menus.Add(new MenuItemViewModel
             {
                 Icon = "ic_exit_to_app",
                 PageName = "LoginPage",
                 Title = Languages.LogOut,
             });
+
+        }
+        #endregion
+
+        #region Commands
+
+        public ICommand SearchCommand
+        {
+            get
+            {
+                return new RelayCommand(ExecuteSearch);
+            }
+        }
+
+        private async void ExecuteSearch()
+        {
+            var mainvm = MainViewModel.GetInstance();
+            mainvm.Book.LoadContent(mainvm.Search);
+            await App.Navigator.PushAsync(new BookPage());
         }
         #endregion
     }
