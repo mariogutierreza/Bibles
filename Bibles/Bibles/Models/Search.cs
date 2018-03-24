@@ -33,8 +33,6 @@ namespace Bibles.Models
 
         [JsonProperty("single_verse")]
         public bool SingleVerse { get; set; }
-
-        [JsonProperty("nav")]
-        public object[] Nav { get; set; }
+        
     }
 }

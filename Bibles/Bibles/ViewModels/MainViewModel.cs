@@ -134,8 +134,17 @@
         private async void ExecuteSearch()
         {
             var mainvm = MainViewModel.GetInstance();
-            mainvm.Book.LoadContent(mainvm.Search);
+            if (App.Navigator.CurrentPage.Title.Equals(Languages.Bibles))
+            {
+                mainvm.Book = new BookViewModel();
+                mainvm.Book.LoadContent(false, mainvm.Search);
+            }
+            else
+            {
+                mainvm.Book.LoadContent(true, mainvm.Search);
+            }
             await App.Navigator.PushAsync(new BookPage());
+            App.Master.IsPresented = false;
         }
         #endregion
     }

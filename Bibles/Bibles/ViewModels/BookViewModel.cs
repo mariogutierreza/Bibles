@@ -18,7 +18,7 @@
         #endregion
 
         #region Attributes
-        private Book book;
+        public Book book;
         private bool isRefreshing;
         private ContentResponse contentResponse;
         private ObservableCollection<Verse> verses;
@@ -39,6 +39,11 @@
         #endregion
 
         #region Constructors
+        public BookViewModel()
+        {
+            this.apiService = new ApiService();
+        }
+
         public BookViewModel(Book book)
         {
             this.apiService = new ApiService();
@@ -51,7 +56,7 @@
         #endregion
 
         #region Methods
-        public async void LoadContent(string search = null)
+        public async void LoadContent(bool book = false, string keyword = null)
         {
             this.IsRefreshing = true;
 
@@ -68,7 +73,8 @@
 
             var parameters = "";
             Domain.Response response = null;
-            if (search == null)
+            bool isSearch = false;
+            if (!book && keyword == null)
             {
                 parameters = string.Format(
                     "?bible={0}&reference={1}",
@@ -79,17 +85,30 @@
                     "/api",
                     parameters);
             }
+            else if (!book)
+            {
+                parameters = string.Format(
+                    "?bible={0}&search={1}",
+                    MainViewModel.GetInstance().SelectedModule,
+                    keyword);
+                response = await this.apiService.Get<SearchResponse>(
+                    "http://api.biblesupersearch.com",
+                    "/api",
+                    parameters);
+                isSearch = true;
+            }
             else
             {
                 parameters = string.Format(
                     "?bible={0}&reference={1}&search={2}",
                     MainViewModel.GetInstance().SelectedModule,
                     this.book.Shortname,
-                    search);
+                    keyword);
                 response = await this.apiService.Get<SearchResponse>(
                     "http://api.biblesupersearch.com",
                     "/api",
                     parameters);
+                isSearch = true;
             }
 
 
@@ -104,7 +123,7 @@
             }
 
 
-            if (search == null)
+            if (!isSearch)
             {
                 HandleBook(response);
             }

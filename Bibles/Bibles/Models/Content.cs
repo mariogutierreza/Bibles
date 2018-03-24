@@ -30,8 +30,6 @@
 
         [JsonProperty("single_verse")]
         public bool SingleVerse { get; set; }
-
-        [JsonProperty("nav")]
-        public Nav Nav { get; set; }
+        
     }
 }

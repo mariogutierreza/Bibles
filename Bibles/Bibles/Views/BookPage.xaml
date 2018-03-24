@@ -21,6 +21,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label
                                     Grid.Column="0"
@@ -32,6 +33,11 @@
                                 <Label
                                     Grid.Column="1"
                                     Text="{Binding Text}"
+                                    TextColor="Black">
+                                </Label>
+                                <Label
+                                    Grid.Column="2"
+                                    Text="{Binding Book}"
                                     TextColor="Black">
                                 </Label>
                             </Grid>
