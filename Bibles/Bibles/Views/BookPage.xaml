@@ -12,11 +12,16 @@
             Padding="5">
             <ListView 
                 HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
                 ItemsSource="{Binding Verses}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <Frame
+                                CornerRadius="20"
+                                HasShadow="true"
+                                Margin="5">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -41,6 +46,7 @@
                                     TextColor="Black">
                                 </Label>
                             </Grid>
+                           </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

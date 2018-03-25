@@ -283,6 +283,11 @@
             get { return Resource.UserRegisteredMessage; }
         }
 
+        public static string Ok
+        {
+            get { return Resource.Ok; }
+        }
+
         public static string SourceImageQuestion
         {
             get { return Resource.SourceImageQuestion; }
@@ -333,7 +338,7 @@
             get { return Resource.CheckInternet; }
         }
 
-        public static string Ok
+        public static string ok
         {
             get { return Resource.Ok; }
         }

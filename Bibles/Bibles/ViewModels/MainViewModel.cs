@@ -12,6 +12,10 @@
 
     public class MainViewModel : BaseViewModel
     {
+        #region Attibrutes
+        private UserLocal user;
+        #endregion
+
         #region Properties
         public List<string> BiblesList
         {
@@ -35,6 +39,13 @@
             get;
             set;
         }
+
+        public UserLocal User
+        {
+            get { return this.user; }
+            set { SetValue(ref this.user, value); }
+        }
+
         #endregion
 
         #region ViewModels

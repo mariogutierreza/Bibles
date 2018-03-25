@@ -7,9 +7,11 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ActivityIndicator 
+                IsRunning="True"
+                Color="Blue"
+                VerticalOptions="CenterAndExpand">
+            </ActivityIndicator>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

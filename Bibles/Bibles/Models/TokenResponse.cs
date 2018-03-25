@@ -26,6 +26,12 @@
 
         [JsonProperty(PropertyName = "error_description")]
         public string ErrorDescription { get; set; }
+
+        public static implicit operator string(TokenResponse v)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

@@ -12,6 +12,7 @@
     {
         #region Services
         private ApiService apiService;
+        private DataService dataService;
         #endregion
 
         #region Attributes
@@ -54,19 +55,31 @@
         #endregion
 
         #region Constructors
+
         public LoginViewModel()
         {
             this.apiService = new ApiService();
+            this.dataService = new DataService();
 
             this.IsRemembered = true;
             this.IsEnabled = true;
-
-            this.Email = "mariogutierreza@hotmail.com";
-            this.Password = "123456";
         }
         #endregion
 
         #region Commands
+        public ICommand LoginFacebookComand
+        {
+            get
+            {
+                return new RelayCommand(LoginFacebook);
+            }
+        }
+
+        private async void LoginFacebook()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginFacebookPage());
+        }
+
         public ICommand LoginCommand
         {
             get
@@ -112,10 +125,9 @@
             }
 
             var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
-
             var token = await this.apiService.GetToken(
-                apiSecurity, 
-                this.Email, 
+                apiSecurity,
+                this.Email,
                 this.Password);
 
             if (token == null)
@@ -141,14 +153,27 @@
                 return;
             }
 
+            var user = await this.apiService.GetUserByEmail(
+                apiSecurity,
+                "/api",
+                "/Users/GetUserByEmail",
+                token.TokenType,
+                token.AccessToken,
+                this.Email);
+
+            var userLocal = Converter.ToUserLocal(user);
+            userLocal.Password = this.Password;
+
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
+            mainViewModel.User = userLocal;
 
             if (this.IsRemembered)
             {
                 Settings.Token = token.AccessToken;
                 Settings.TokenType = token.TokenType;
+                this.dataService.DeleteAllAndInsert(userLocal);
             }
 
             mainViewModel.Bibles = new BiblesViewModel();
@@ -165,9 +190,8 @@
         {
             get
             {
-                return new RelayCommand(Register);                
+                return new RelayCommand(Register);
             }
-
         }
 
         private async void Register()

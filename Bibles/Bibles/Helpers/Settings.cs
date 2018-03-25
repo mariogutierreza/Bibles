@@ -41,5 +41,10 @@
                 AppSettings.AddOrUpdateValue(tokenType, value);
             }
         }
+        public static string IsRemembered
+        {
+            get;
+            internal set;
+        }
     }
 }

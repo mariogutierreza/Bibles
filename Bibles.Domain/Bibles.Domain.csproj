@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePasswordRequest.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="FacebookResponse.cs" />
     <Compile Include="Response.cs" />
