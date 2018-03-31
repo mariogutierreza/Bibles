@@ -16,8 +16,8 @@
                 Padding="5,20,5,5">
                 <controls:CircleImage 
                     Aspect="AspectFit"
-                    WidthRequest="190"
-                    HeightRequest="190"
+                    WidthRequest="160"
+                    HeightRequest="160"
                     Source="bible">
                     <controls:CircleImage.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
@@ -33,23 +33,24 @@
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         Text="{i18n:Translate EMail}"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
+                        BackgroundColor="LightGray"
                         Grid.Row="0"
                         Grid.Column="1"
                         Keyboard="Email"
-                        TextColor="White"
+                        TextColor="Black"
                         Text="{Binding Email, Mode=TwoWay}"
                         Placeholder="{i18n:Translate EmailPlaceHolder}">
                     </Entry>
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         Text="{i18n:Translate Password}"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
@@ -58,7 +59,7 @@
                         Grid.Row="1"
                         Grid.Column="1"
                         IsPassword="true"
-                        TextColor="White"
+                        TextColor="Black"
                         Text="{Binding Password, Mode=TwoWay}"
                         Placeholder="{i18n:Translate PasswordPlaceHolder}">
                     </Entry>
@@ -66,7 +67,7 @@
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand"
-                    Color="Black">
+                    Color="DodgerBlue">
                 </ActivityIndicator>
                 <StackLayout
                     Margin="10,0"
@@ -86,9 +87,9 @@
                 <Label
                     HorizontalOptions="Center"
                     Text="{i18n:Translate Forgot}"
-                    TextColor="Black"
+                    TextColor="DodgerBlue"
                     FontAttributes="Bold"
-                    VerticalOptions="CenterAndExpand">
+                    VerticalOptions="EndAndExpand">
                 </Label>
                 <StackLayout
                     Margin="40,0"

@@ -38,7 +38,7 @@
                                         FontAttributes="Bold"
                                         FontSize="Medium"
                                         Text="{Binding Name}"
-                                        TextColor="Black">
+                                        TextColor="DodgerBlue">
                                     </Label>
                                     <Label
                                         Text="{Binding Module}"

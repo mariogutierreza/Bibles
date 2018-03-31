@@ -37,7 +37,7 @@
                                     FontSize="Medium"
                                     Text="{Binding VerseNumber}"
                                     TextColor="White"
-                                    BackgroundColor="Black">
+                                    BackgroundColor="DodgerBlue">
                                 </Label>
                                 <Label
                                     Grid.Column="1"

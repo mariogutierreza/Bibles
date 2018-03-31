@@ -15,7 +15,7 @@
                 BackgroundColor="Gray">
                 <controls:CircleImage 
                     Aspect="AspectFill"
-                    HeightRequest="250"
+                    HeightRequest="230"
                     Source="{Binding ImageSource}">
                     <controls:CircleImage.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
@@ -23,14 +23,15 @@
                 </controls:CircleImage>
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                    Color="Black"
+                    Color="DodgerBlue"
                     BackgroundColor="Gray">
                 </ActivityIndicator>
                 <Label 
-                    HorizontalOptions="Center" 
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
                     FontSize="Small" 
                     Text="{i18n:Translate ChangeImage}" 
-                    TextColor="Black">
+                    TextColor="DodgerBlue">
                 </Label>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -41,7 +42,7 @@
                         Grid.Column="0" 
                         Grid.Row="0" 
                         Text="{i18n:Translate FirstNameLabel}" 
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
@@ -50,14 +51,14 @@
                         Grid.Column="1" 
                         Grid.Row="0" 
                         Placeholder="{i18n:Translate FirstNamePlaceHolder}" 
-                        TextColor="White"
+                        TextColor="Black"
                         Text="{Binding FirstName, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="1" 
                         Text="{i18n:Translate LastNameLabel}" 
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
@@ -65,14 +66,14 @@
                         Grid.Column="1" 
                         Grid.Row="1" 
                         Placeholder="{i18n:Translate LastNamePlaceHolder}" 
-                        TextColor="White"
+                        TextColor="Black"
                         Text="{Binding LastName, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="2" 
                         Text="{i18n:Translate EMail}" 
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
@@ -81,14 +82,14 @@
                         Grid.Column="1" 
                         Grid.Row="2" 
                         Placeholder="{i18n:Translate EmailPlaceHolder}" 
-                        TextColor="White" 
+                        TextColor="Black" 
                         Text="{Binding Email, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="3" 
                         Text="{i18n:Translate PhoneLabel}" 
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
@@ -97,14 +98,14 @@
                         Grid.Row="3" 
                         Keyboard="Telephone" 
                         Placeholder="{i18n:Translate PhonePlaceHolder}" 
-                        TextColor="White" 
+                        TextColor="Black" 
                         Text="{Binding Telephone, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="4" 
                         Text="{i18n:Translate Password}" 
-                        TextColor="Black" 
+                        TextColor="DodgerBlue" 
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
@@ -114,14 +115,14 @@
                         BackgroundColor="Gray" 
                         IsPassword="true" 
                         Placeholder="{i18n:Translate PasswordPlaceHolder}" 
-                        TextColor="White" 
+                        TextColor="Black" 
                         Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="5" 
                         Text="{i18n:Translate ConfirmLabel}" 
-                        TextColor="Black"
+                        TextColor="DodgerBlue"
                         FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
@@ -131,11 +132,12 @@
                         BackgroundColor="Gray" 
                         IsPassword="true" 
                         Placeholder="{i18n:Translate ConfirmPlaceHolder}" 
-                        TextColor="White" 
+                        TextColor="Black" 
                         Text="{Binding Confirm, Mode=TwoWay}">
                     </Entry>
                 </Grid>
                 <ActivityIndicator
+                    Color="DodgerBlue"
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     BackgroundColor="Gray">
                 </ActivityIndicator>

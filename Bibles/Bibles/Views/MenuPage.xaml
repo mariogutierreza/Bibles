@@ -14,15 +14,15 @@
             Padding="5,20,5,5">
              <controls:CircleImage 
                     Aspect="AspectFit"
-                    WidthRequest="150"
-                    HeightRequest="150"
+                    WidthRequest="160"
+                    HeightRequest="160"
                     Source="bible"
                     BackgroundColor="Gray">
                     <controls:CircleImage.GestureRecognizers>
                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
                     </controls:CircleImage.GestureRecognizers>
              </controls:CircleImage>
-            <StackLayout>
+             <StackLayout>
                 <SearchBar 
                     Placeholder="{i18n:Translate Search}" 
                     Text="{Binding Search, Mode=TwoWay}" 
@@ -31,8 +31,8 @@
                     BackgroundColor="Gray"
                     SearchCommand="{Binding SearchCommand}">                    
                 </SearchBar>
-            </StackLayout>
-            <ListView 
+             </StackLayout>
+             <ListView 
                 BackgroundColor="Gray"
                 ItemsSource="{Binding Menus}"
                 HasUnevenRows="True"
@@ -51,19 +51,20 @@
                                 <Image 
                                     Source="{Binding Icon}"
                                     WidthRequest="50"
-                                    HeightRequest="50">
+                                    HeightRequest="60">
                                 </Image>
                                 <Label 
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     TextColor="Black"
+                                    FontAttributes="Bold"
                                     Text="{Binding Title}">
                                 </Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+             </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

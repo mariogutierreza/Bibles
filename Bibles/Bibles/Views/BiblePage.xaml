@@ -37,7 +37,7 @@
                                     FontAttributes="Bold"
                                     FontSize="Medium"
                                     Text="{Binding Name}"
-                                    TextColor="Black">
+                                    TextColor="DodgerBlue">
                                     </Label>
                                     <Label
                                     Grid.Column="1"
