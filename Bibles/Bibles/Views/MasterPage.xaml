@@ -5,13 +5,16 @@
     xmlns:pages="clr-namespace:Bibles.Views"
     x:Class="Bibles.Views.MasterPage">
     <MasterDetailPage.Master>
-        <pages:MenuPage/>
+        <pages:MenuPage
+            BackgroundColor="Black"/>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage 
-            x:Name="Navigator">
+            x:Name="Navigator"
+            BackgroundColor="Black">
             <x:Arguments>
-                <pages:BiblesPage/>
+                <pages:BiblesPage
+                    BackgroundColor="Black"/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

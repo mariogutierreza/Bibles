@@ -6,7 +6,7 @@
     xmlns:i18n="clr-namespace:Bibles.Helpers"
     x:Class="Bibles.Views.MenuPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    BackgroundColor="Navy"
+    BackgroundColor="Black"
     Icon="ic_action_menu"
     Title="{i18n:Translate Menu}">
     <ContentPage.Content>
@@ -14,24 +14,26 @@
             Padding="5,20,5,5">
              <controls:CircleImage 
                     Aspect="AspectFit"
-                    WidthRequest="190"
-                    HeightRequest="190"
-                    Source="bible">
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Source="bible"
+                    BackgroundColor="Gray">
                     <controls:CircleImage.GestureRecognizers>
                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
                     </controls:CircleImage.GestureRecognizers>
-                </controls:CircleImage>
+             </controls:CircleImage>
             <StackLayout>
                 <SearchBar 
                     Placeholder="{i18n:Translate Search}" 
                     Text="{Binding Search, Mode=TwoWay}" 
-                    TextColor="White" 
+                    TextColor="Black" 
                     HeightRequest="40" 
+                    BackgroundColor="Gray"
                     SearchCommand="{Binding SearchCommand}">                    
                 </SearchBar>
             </StackLayout>
             <ListView 
-                BackgroundColor="Navy"
+                BackgroundColor="Gray"
                 ItemsSource="{Binding Menus}"
                 HasUnevenRows="True"
                 SeparatorVisibility="None">   
@@ -54,7 +56,7 @@
                                 <Label 
                                     Grid.Column="1"
                                     VerticalOptions="Center"
-                                    TextColor="White"
+                                    TextColor="Black"
                                     Text="{Binding Title}">
                                 </Label>
                             </Grid>

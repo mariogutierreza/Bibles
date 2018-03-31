@@ -2,19 +2,27 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" 
     xmlns:i18n="clr-namespace:Bibles.Helpers"
     x:Class="Bibles.Views.LoginPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="{i18n:Translate Login}">
+    Title="{i18n:Translate Login}"
+    BackgroundColor="Black">
     <ContentPage.Content>
         <ScrollView
-            BindingContext="{Binding Login}">
+            BindingContext="{Binding Login}"
+            BackgroundColor="LightGray">
             <StackLayout
                 Padding="5,20,5,5">
-                <Image
-                    Source="bible"
-                    WidthRequest="200">
-                </Image>
+                <controls:CircleImage 
+                    Aspect="AspectFit"
+                    WidthRequest="190"
+                    HeightRequest="190"
+                    Source="bible">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
                 <Grid
                     Margin="10,0"
                     VerticalOptions="CenterAndExpand">
@@ -25,33 +33,40 @@
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
+                        TextColor="Black"
                         Text="{i18n:Translate EMail}"
+                        FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="0"
                         Grid.Column="1"
                         Keyboard="Email"
+                        TextColor="White"
                         Text="{Binding Email, Mode=TwoWay}"
                         Placeholder="{i18n:Translate EmailPlaceHolder}">
                     </Entry>
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
+                        TextColor="Black"
                         Text="{i18n:Translate Password}"
+                        FontAttributes="Bold"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="1"
                         Grid.Column="1"
                         IsPassword="true"
+                        TextColor="White"
                         Text="{Binding Password, Mode=TwoWay}"
                         Placeholder="{i18n:Translate PasswordPlaceHolder}">
                     </Entry>
                 </Grid>
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                    VerticalOptions="CenterAndExpand">
+                    VerticalOptions="CenterAndExpand"
+                    Color="Black">
                 </ActivityIndicator>
                 <StackLayout
                     Margin="10,0"
@@ -59,6 +74,7 @@
                     VerticalOptions="CenterAndExpand">
                     <Label
                         HorizontalOptions="StartAndExpand"
+                        TextColor="Black"
                         Text="{i18n:Translate Rememberme}"
                         VerticalOptions="Center">
                     </Label>
@@ -70,7 +86,8 @@
                 <Label
                     HorizontalOptions="Center"
                     Text="{i18n:Translate Forgot}"
-                    TextColor="Blue"
+                    TextColor="Black"
+                    FontAttributes="Bold"
                     VerticalOptions="CenterAndExpand">
                 </Label>
                 <StackLayout
@@ -78,7 +95,7 @@
                     Orientation="Horizontal"
                     VerticalOptions="CenterAndExpand">
                     <Button
-                        BackgroundColor="Navy"
+                        BackgroundColor="Black"
                         BorderRadius="23"
                         Command="{Binding LoginCommand}"
                         HeightRequest="46"
@@ -88,7 +105,7 @@
                         TextColor="White">
                     </Button>
                     <Button
-                        BackgroundColor="Purple"
+                        BackgroundColor="Black"
                         BorderRadius="23"
                         Command="{Binding RegisterCommand}"
                         HeightRequest="46"
@@ -104,18 +121,18 @@
                     VerticalOptions="EndAndExpand">
                     <Image
                         Source="facebook_logo"
-                        WidthRequest="100">
+                        WidthRequest="80">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LoginFacebookComand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Source="twitter_logo"
-                        WidthRequest="100">
+                        WidthRequest="83">
                     </Image>
                     <Image
                         Source="instagram_logo"
-                        WidthRequest="85">
+                        WidthRequest="73">
                     </Image>
                 </StackLayout>
             </StackLayout>

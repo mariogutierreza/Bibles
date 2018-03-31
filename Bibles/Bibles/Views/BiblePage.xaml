@@ -9,7 +9,8 @@
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Bible}"
-            Padding="5">
+            Padding="5"
+            BackgroundColor="Gray">
             <ListView 
                 HasUnevenRows="true" 
                 IsPullToRefreshEnabled="True"
@@ -21,7 +22,8 @@
                             <Frame
                                 CornerRadius="20"
                                 HasShadow="true"
-                                Margin="5">
+                                Margin="5"
+                                BackgroundColor="LightGray">
                                 <Grid>
                                     <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding SelectBookCommand}"/>

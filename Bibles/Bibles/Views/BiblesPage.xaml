@@ -9,7 +9,8 @@
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Bibles}"
-            Padding="5">
+            Padding="5"
+            BackgroundColor="Gray">
             <ListView 
                 HasUnevenRows="true" 
                 IsPullToRefreshEnabled="True"
@@ -19,6 +20,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <Frame
+                                BackgroundColor="LightGray"
                                 CornerRadius="20"
                                 HasShadow="true"
                                 Margin="5">

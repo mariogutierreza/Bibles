@@ -5,11 +5,13 @@
     xmlns:i18n="clr-namespace:Bibles.Helpers"
     x:Class="Bibles.Views.BookPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="{i18n:Translate Book}">
+    Title="{i18n:Translate Book}"
+    BackgroundColor="Black">
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Book}"
-            Padding="5">
+            Padding="5"
+            BackgroundColor="Gray">
             <ListView 
                 HasUnevenRows="true" 
                 IsPullToRefreshEnabled="true"
@@ -19,6 +21,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <Frame
+                                BackgroundColor="LightGray"
                                 CornerRadius="20"
                                 HasShadow="true"
                                 Margin="5">
@@ -33,13 +36,14 @@
                                     FontAttributes="Bold"
                                     FontSize="Medium"
                                     Text="{Binding VerseNumber}"
-                                    TextColor="Black">
+                                    TextColor="White"
+                                    BackgroundColor="Black">
                                 </Label>
                                 <Label
                                     Grid.Column="1"
                                     Text="{Binding Text}"
                                     TextColor="Black">
-                                </Label>
+                                    </Label>
                                 <Label
                                     Grid.Column="2"
                                     Text="{Binding Book}"
